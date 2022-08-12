@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+
+// for every produced class, create a separate or more Java files.
+option java_multiple_files = true;
+
+// The produced classes package may be found in the src/main/java directory.
+option java_package = "grpc.unaryfarmingsmart";
+
+// The wrapper class's class name that represents this file.
+option java_outer_classname = "StringsServiceImplementation";
+
+package FarmingSmart;
+
+// The server's interface exports.
+service DataCollection {
+
+// rpc method for unary calls
+  rpc checkPlantio (StringRequest) returns (StringResponse) {}
+
+// rpc method that does not return any response
+  rpc empty(Message) returns (Empty) {}
+
+}
+
+// the variable should be define separately in which rpc method
+message StringRequest {
+  string photo = 1;
+}
+
+message StringResponse {
+  string photo = 1;
+}
+
+// Enum is a complex data type that might include additional variables.
+message Message {
+	enum Enum {
+        GOOD = 0;
+        ACCEPTABLE = 1;
+        BAD = 2;
+    }
+
+    Enum detail = 1;
+}
+
+message Empty {
+
+}
