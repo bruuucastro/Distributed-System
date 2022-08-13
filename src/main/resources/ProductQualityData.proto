@@ -1,1 +1,40 @@
-syntax = "proto2";
+syntax = "proto3";
+
+// for every produced class, create a separate or more Java files.
+option java_multiple_files = true;
+
+// Package inside the src/main/java where generated classes will reside.
+option java_package = "grpc.bidirectional Smart Farming";
+
+// The wrapper class's class name that represents this file.
+option java_outer_classname = "Smart Farming";
+
+// Use the package name to prevent name conflicts
+package SmartFarming;
+
+// The server's interface exports.
+   service ProductQualityData {
+
+// bidirectional streaming calls using the rpc method
+    rpc dataHavest (stream Request_Harvest) returns (stream BestGrains) {}
+
+  }
+
+message Request_Harvest {
+  string name = 1;
+  string type = 2;
+  int32 date = 3;
+
+}
+
+message BestGrains {
+  string name = 1;
+  string type = 2;
+  int32 date = 3;
+
+}
+
+
+
+
+

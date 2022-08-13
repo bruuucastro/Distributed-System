@@ -1,1 +1,34 @@
-syntax = "proto2";
+syntax = "proto3"; // Make sure to have proto3 for your proto files.
+
+// for every produced class, create a separate or more Java files.
+option java_multiple_files = true;
+
+// Package inside the src/main/java where generated classes will reside.
+option java_package = "grpc.clientStream Smart Farming";
+
+// The wrapper class's class name that represents this file.
+option java_outer_classname = "Smart Farming";
+
+// Use the package name to prevent name conflicts
+package SmartFarming;
+
+// The server's interface exports.
+service GrainType {
+
+// rpc method for client streaming calls
+  rpc TypeGrain (stream RequestGrainType) returns (BetterGrain);
+
+
+}
+
+// define each variable in rpc method separately
+
+message BetterGrain {
+  string type = 1;
+
+
+  }
+
+message RequestGrainType {
+  string type = 1;
+}

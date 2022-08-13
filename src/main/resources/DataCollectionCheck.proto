@@ -5,18 +5,18 @@ syntax = "proto3";
 option java_multiple_files = true;
 
 // The produced classes package may be found in the src/main/java directory.
-option java_package = "grpc.unaryfarmingsmart";
+option java_package = "grpc.unary Smart Farming";
 
 // The wrapper class's class name that represents this file.
-option java_outer_classname = "StringsServiceImplementation";
+option java_outer_classname = "Smart Farming";
 
-package FarmingSmart;
+package SmartFarming;
 
 // The server's interface exports.
 service DataCollection {
 
 // rpc method for unary calls
-  rpc checkPlantio (StringRequest) returns (StringResponse) {}
+  rpc checkPlantio (RequestPhoto) returns (ReceivePhoto) {}
 
 // rpc method that does not return any response
   rpc empty(Message) returns (Empty) {}
@@ -24,11 +24,11 @@ service DataCollection {
 }
 
 // the variable should be define separately in which rpc method
-message StringRequest {
+message RequestPhoto {
   string photo = 1;
 }
 
-message StringResponse {
+message ReceivePhoto {
   string photo = 1;
 }
 

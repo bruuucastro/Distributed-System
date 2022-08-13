@@ -1,1 +1,35 @@
-syntax = "proto2";
+syntax = "proto3"; // Make sure to have proto3 for your proto files.
+
+// for every produced class, create a separate or more Java files.
+option java_multiple_files = true;
+
+// Package inside the src/main/java where generated classes will reside.
+option java_package = "grpc.clientStream Smart Farming";
+
+// The wrapper class's class name that represents this file.
+option java_outer_classname = "Smart Farming";
+
+// Use the package name to prevent name conflicts
+package SmartFarming;
+
+// The server's interface exports.
+service RegisteredDistribuitor {
+
+// rpc method for client streaming calls
+  rpc RegisteredDistribuitor(stream RequestDistribuitors) returns (DistribuitorAvailable);
+
+
+}
+
+// define each variable in rpc method separately
+
+message RequestDistribuitors {
+  string name = 1;
+  string type = 2;
+  string status = 3;
+
+  }
+
+message DistribuitorAvailable {
+  string name = 1;
+}

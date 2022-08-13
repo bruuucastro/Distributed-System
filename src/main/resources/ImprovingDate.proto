@@ -1,1 +1,34 @@
-syntax = "proto2";
+syntax = "proto3";
+
+// for every produced class, create a separate or more Java files.
+option java_multiple_files = true;
+
+// Package inside the src/main/java where generated classes will reside.
+option java_package = "grpc.examples.serverstreamstrings";
+
+// The wrapper class's class name that represents this file.
+option java_outer_classname = "StringsServiceImpl";
+
+// Use the package name to prevent name conflicts
+package strings;
+
+// The server's interface exports.
+service StringsService {
+
+// rpc method for server streaming calls
+  rpc harvestDate(HarvestDate) returns (stream InformationMonth);
+
+}
+
+// define each variable in rpc method separately
+
+message HarvestDate {
+  string val = 1;
+}
+
+message InformationMonth {
+  string bestmonth = 1;
+  string worstmonth = 2;
+  int32 day = 3;
+
+}
