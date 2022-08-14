@@ -21,7 +21,7 @@ service GrainType {
 
 }
 
-// define each variable in rpc method separately
+
 
 message BetterGrain {
   string type = 1;
@@ -32,3 +32,5 @@ message BetterGrain {
 message RequestGrainType {
   string type = 1;
 }
+
+

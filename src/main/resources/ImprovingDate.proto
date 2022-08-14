@@ -4,7 +4,7 @@ syntax = "proto3";
 option java_multiple_files = true;
 
 // Package inside the src/main/java where generated classes will reside.
-option java_package = "grpc.examples.serverstreamstrings";
+option java_package = "grpc.serverstreaming Smart Farming";
 
 // The wrapper class's class name that represents this file.
 option java_outer_classname = "StringsServiceImpl";
@@ -22,13 +22,19 @@ service StringsService {
 
 // define each variable in rpc method separately
 
-message HarvestDate {
-  string val = 1;
-}
 
-message InformationMonth {
+
+message HarvestDate {
   string bestmonth = 1;
   string worstmonth = 2;
   int32 day = 3;
 
+  }
+
+message InformationMonth {
+	string month  = 1;
+
+
 }
+
+

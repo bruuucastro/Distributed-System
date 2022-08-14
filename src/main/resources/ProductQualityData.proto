@@ -15,8 +15,8 @@ package SmartFarming;
 // The server's interface exports.
    service ProductQualityData {
 
-// bidirectional streaming calls using the rpc method
-    rpc dataHavest (stream Request_Harvest) returns (stream BestGrains) {}
+
+    rpc dataHarvest (stream Request_Harvest) returns (stream BestGrains) {}
 
   }
 

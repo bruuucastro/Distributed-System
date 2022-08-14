@@ -35,9 +35,9 @@ message ReceivePhoto {
 // Enum is a complex data type that might include additional variables.
 message Message {
 	enum Enum {
-        GOOD = 0;
-        ACCEPTABLE = 1;
-        BAD = 2;
+        Done = 0;
+        Not_Done = 1;
+        INCONCLUSIVE = 2;
     }
 
     Enum detail = 1;
